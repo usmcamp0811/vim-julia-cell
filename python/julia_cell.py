@@ -122,6 +122,7 @@ def _get_cell_boundaries():
         cell_boundaries = _get_rows_with_marks(buffer, valid_marks)
     elif delimiter == 'tags':
         tag = vim.eval('g:julia_cell_tag')
+        tag = '```'
         cell_boundaries = _get_rows_with_tag(buffer, tag)
     else:
         _error("Invalid option value for g:julia_cell_valid_marks: {}"
